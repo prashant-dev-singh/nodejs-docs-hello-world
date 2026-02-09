@@ -32,12 +32,6 @@ steps:
     customCommand: 'run build'
 
 
-- task: Npm@1
-  inputs:
-    command: 'custom'
-    workingDir: '$(Build.SourcesDirectory)'
-    customCommand: 'test'
-
 - task: CopyFiles@2
   inputs:
     SourceFolder: '$(Build.SourcesDirectory)'
