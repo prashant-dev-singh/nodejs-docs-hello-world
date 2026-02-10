@@ -24,6 +24,7 @@ steps:
   inputs:
     command: 'install'
     workingDir: '$(Build.SourcesDirectory)'
+  displayName: 'Install'
 
 
 - task: CopyFiles@2
@@ -31,6 +32,7 @@ steps:
     SourceFolder: '$(Build.SourcesDirectory)'
     Contents: '**'
     TargetFolder: '$(Build.ArtifactStagingDirectory)'
+  displayName: 'Copy Files'
 
 
 - task: ArchiveFiles@2
@@ -40,11 +42,11 @@ steps:
     archiveType: 'zip'
     archiveFile: '$(Build.ArtifactStagingDirectory)/webapp.zip'
     replaceExistingArchive: true
-
+  displayName: 'Archive Files'
 
 - task: PublishBuildArtifacts@1
   inputs:
     PathtoPublish: '$(Build.ArtifactStagingDirectory)'
     ArtifactName: 'drop'
     publishLocation: 'Container'
-
+  displayName: 'Publish Artifacts'
