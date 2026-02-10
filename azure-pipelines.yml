@@ -38,7 +38,7 @@ steps:
     rootFolderOrFile: '$(Build.SourcesDirectory)'
     includeRootFolder: false
     archiveType: 'zip'
-    archiveFile: '$(Build.ArtifactStagingDirectory)/webapp.zip'
+    archiveFile: '$(Build.ArtifactStagingDirectory)/drop/webapp.zip'
     replaceExistingArchive: true
 
 
